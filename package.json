@@ -1,0 +1,11 @@
+{
+  "name": "Timestamp Microservice",
+  "version": "0.0.0",
+  "description": "Basejump challenge from FCC",
+  "main": "server.js",
+  "repository": "",
+  "author": "Na",
+  "dependencies": {
+    "express": "~3.2.4"
+  }
+}
