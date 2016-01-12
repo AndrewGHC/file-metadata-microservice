@@ -1,1 +1,1 @@
-Timestamp microservice for the FCC bonfire challenge - http://www.freecodecamp.com/challenges/basejump-timestamp-microservice
+Request header parser microservice for the FCC challenge - http://www.freecodecamp.com/challenges/basejump-request-header-parser-microservice
