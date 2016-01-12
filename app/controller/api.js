@@ -1,5 +1,4 @@
 var accepts = require('accepts');
-var os = require('os');
 var useragent = require('useragent');
 
 module.exports = function(req) {
@@ -12,7 +11,6 @@ module.exports = function(req) {
     var ip   = req.header('x-forwarded-for'),
         lan  = accept.languages()[0],
         soft = agent.os.toString();
-        //soft = req.headers['user-agent'];
     
     // Place in JSON object and return
     

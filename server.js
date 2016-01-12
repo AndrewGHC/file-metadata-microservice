@@ -1,6 +1,7 @@
 var express = require('express');
-var app = express();
 var routes = require('./app/routes/routes.js');
+
+var app = express();
 
 routes(app);
 

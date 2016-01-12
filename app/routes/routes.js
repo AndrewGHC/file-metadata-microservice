@@ -1,4 +1,3 @@
-var path = process.cwd();
 var api = require('../controller/api.js');
 
 module.exports = function(app) {
