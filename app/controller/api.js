@@ -9,7 +9,7 @@ module.exports = function(req) {
     
     // Store ip, language and operating system
     
-    var ip   = req.ip,
+    var ip   = req.header('x-forwarded-for'),
         lan  = accept.languages()[0],
         soft = agent.os.toString();
         //soft = req.headers['user-agent'];
