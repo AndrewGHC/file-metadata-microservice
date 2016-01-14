@@ -1,1 +1,1 @@
-Request header parser microservice for the FCC challenge - http://www.freecodecamp.com/challenges/basejump-request-header-parser-microservice
+URL shortener microservice for the FCC challenge - http://www.freecodecamp.com/challenges/basejump-url-shortener-microservice
