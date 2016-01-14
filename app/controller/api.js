@@ -11,7 +11,6 @@ module.exports = function(req, url, res) {
             short_url: 'Error, incorrect URI'
         };
         res.sent(JSON.stringify(errorInUri));
-        return;
     } else {
     
     // Check if url exists in db. If so, return without saving a new item.
