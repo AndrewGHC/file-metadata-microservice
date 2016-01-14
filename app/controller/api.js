@@ -13,7 +13,7 @@ module.exports = function(req, url, res) {
         return JSON.stringify(errorInUri);
     } 
     
-    // Return function within export closure
+    // Check if url exists in db. If so, return without saving a new item.
     var URLmodel = models;
     URLmodel.findOne({'original_url':url}, {_id:0, original_url:1, short_url:1}, function(err, docs){
         if (err) throw err;

@@ -15,9 +15,19 @@
                 Pass a URL as a parameter to receive a JSON string containing a shortened URL that will redirect to the original site, example usage below:
             </p>
             <p class="well well-lg">
-                (thisUrl).com/http://google.com <br>
-                (thisUrl).com/1
+                <span style="color:red">To create a new short URL, input the URL after ~/new/</span><br>
+                <span style="color:green">Example: </span>(hostname)/new/http://google.com <br><br>
+                
+                <span style="color:red">To redirect to the shortened URL, use the short_url provided by the API</span><br>
+                <span style="color:green">Example: </span>(hosname)/IractpTp
             </p>
+            <ul>
+                <h2>App functions:</h2>
+                <li>Validates URI before querying and saving to the database.</li>
+                <li>Will not create duplicate short urls for the same URL.</li>
+                <li>Creates a new short URL for each original URL.</li>
+                <li>Redirects to original URL from the input short URL.</li>
+            </ul>
         </section>
     </main>
 </body>
