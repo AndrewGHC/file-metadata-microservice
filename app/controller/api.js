@@ -5,7 +5,6 @@ var models = require('../models/models.js');
 module.exports = function(req, url, res) {
     // Check if URL is valid
     if (!validUrl.isUri(url)) {
-        console.log('Invalid URI');
         var errorInUri = {
             original_url:url,
             short_url: 'Error, incorrect URI'
@@ -18,10 +17,8 @@ module.exports = function(req, url, res) {
         URLmodel.findOne({'original_url':url}, {_id:0, original_url:1, short_url:1}, function(err, docs){
             if (err) throw err;
             if (docs) {
-                console.log('Find found and returned from db.');
                 res.send(JSON.stringify(docs));
             } else {
-                console.log('Find not found and saveIt called.');
                 saveIt();
             }
     

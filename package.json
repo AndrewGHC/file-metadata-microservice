@@ -1,10 +1,10 @@
 {
   "name": "URLshortener",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Basejump challenge from FCC",
   "main": "server.js",
-  "repository": "",
-  "author": "Na",
+  "repository": "https://github.com/AndrewGHC/URL-Shortener-Microservice",
+  "author": "AndrewGHC",
   "dependencies": {
     "express": "^4.13.3",
     "mongodb": "^2.1.4",
