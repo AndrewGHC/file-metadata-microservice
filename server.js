@@ -5,7 +5,8 @@ var app = express();
 
 routes(app);
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect(process.env.MONGODB);
+
 var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.on('open', function() {
