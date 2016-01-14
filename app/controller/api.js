@@ -12,21 +12,22 @@ module.exports = function(req, url, res) {
         };
         res.sent(JSON.stringify(errorInUri));
         return;
-    } 
+    } else {
     
     // Check if url exists in db. If so, return without saving a new item.
-    var URLmodel = models;
-    URLmodel.findOne({'original_url':url}, {_id:0, original_url:1, short_url:1}, function(err, docs){
-        if (err) throw err;
-        if (docs) {
-            console.log('Find found and returned from db.');
-            res.send(JSON.stringify(docs));
-        } else {
-            console.log('Find not found and saveIt called.');
-            saveIt();
-        }
-
-    });
+        var URLmodel = models;
+        URLmodel.findOne({'original_url':url}, {_id:0, original_url:1, short_url:1}, function(err, docs){
+            if (err) throw err;
+            if (docs) {
+                console.log('Find found and returned from db.');
+                res.send(JSON.stringify(docs));
+            } else {
+                console.log('Find not found and saveIt called.');
+                saveIt();
+            }
+    
+        });
+    }
     
     function saveIt () {
         /* 
