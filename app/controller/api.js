@@ -1,11 +1,10 @@
 var validUrl = require('valid-url');
 var randomstring = require("randomstring");
 var models = require('../models/models.js');
-var path     = process.cwd();
 
-module.exports = function(req, url) {
+module.exports = function(req, url, res) {
     // Check if URL is valid
-    if (!validUrl.isUri(url)){
+    if (!validUrl.isUri(url)) {
         console.log('Invalid URI');
         var errorInUri = {
             original_url:url,
@@ -16,21 +15,25 @@ module.exports = function(req, url) {
     
     // Return function within export closure
     var URLmodel = models;
-    URLmodel.findOne({'original_url':url}, 'original_url short_url', function(err, docs){
+    URLmodel.findOne({'original_url':url}, {_id:0, original_url:1, short_url:1}, function(err, docs){
         if (err) throw err;
-        console.log(docs);
         if (docs) {
-            console.log('Find found and called.');
-            return 'a';
+            console.log('Find found and returned from db.');
+            res.send(JSON.stringify(docs));
         } else {
-            console.log('Find not found and save called.');
+            console.log('Find not found and saveIt called.');
             saveIt();
         }
 
     });
     
     function saveIt () {
-        // Save the model to the db
+        /* 
+        Save the model to the db. 
+        
+        It's theoretically possible that the generate function could generate the same key twice but the 
+        probability of this is so low that this possibility has been ignored.
+        */
         var key = randomstring.generate(8);
         var saveURLmodel = new URLmodel({ 
                 original_url: url, 
@@ -40,7 +43,11 @@ module.exports = function(req, url) {
         
         saveURLmodel.save(function (err) {
             if (err) throw err;
-            console.log('Saved item to database');
+            var savedDoc = {
+                original_url:saveURLmodel.original_url,
+                short_url:saveURLmodel.short_url
+            };
+            res.send(JSON.stringify(savedDoc));
         });
     }
 };

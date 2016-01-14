@@ -8,7 +8,7 @@ module.exports = function(app) {
     });
     
     app.get('/new/*', function(req, res) {
-        res.send(api(req, req.params[0]));
+        api(req, req.params[0], res);
     });
     
 };
