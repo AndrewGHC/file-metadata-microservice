@@ -10,8 +10,8 @@ module.exports = function (identifier, res, req) {
         } else {
             console.log('Incorrect short url or does not exist in db');
             var incorrectInput = {
-                original_url:'Error, incorrect identifier or item has not yet been created',
-                short_url:'http://' + req.headers.host + '/' + identifier
+                original_url:'http://' + req.headers.host + '/' + identifier,
+                short_url: 'Error, incorrect identifier or item has not yet been created'
             };
             res.send(JSON.stringify(incorrectInput));
         }
