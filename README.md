@@ -3,12 +3,7 @@ URL Shortener Microservice - FCC Basejump
 
 FCC challenge - http://www.freecodecamp.com/challenges/basejump-url-shortener-microservice
 
-Pass a URL as a parameter to receive a JSON string containing a shortened URL that will redirect to the original site, example usage below:
-
-To create a new short URL, input the URL after ~/new/
--   Example: (hostname)/new/http://google.com
-To redirect to the shortened URL, use the short\_url provided by the API
--   Example: </span>(hosname)/IractpTp
+Pass a URL as a parameter to receive a JSON string containing a shortened URL that will redirect to the original site.
 
 -   Validates URI before querying and saving to the database.
 -   Will not create duplicate short urls for the same URL.
