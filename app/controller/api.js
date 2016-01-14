@@ -6,7 +6,7 @@ module.exports = function(req, url, res) {
     // Check if URL is valid
     if (!validUrl.isUri(url)) {
         var errorInUri = {
-            original_url:url,
+            original_url:'http://' + req.headers.host + '/' + url,
             short_url: 'Error, incorrect URI'
         };
         res.send(JSON.stringify(errorInUri));
