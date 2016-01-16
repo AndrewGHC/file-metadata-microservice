@@ -1,15 +1,12 @@
 {
-  "name": "URLshortener",
+  "name": "fileMetadataMicroservice",
   "version": "1.0.0",
   "description": "Basejump challenge from FCC",
   "main": "server.js",
-  "repository": "https://github.com/AndrewGHC/URL-Shortener-Microservice",
+  "repository": "https://github.com/AndrewGHC/file-metadata-microservice",
   "author": "AndrewGHC",
   "dependencies": {
     "express": "^4.13.3",
-    "mongodb": "^2.1.4",
-    "mongoose": "^4.3.5",
-    "randomstring": "^1.1.3",
-    "valid-url": "^1.0.9"
+    "multer": "^1.1.0"
   }
 }

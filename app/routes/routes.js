@@ -1,5 +1,10 @@
-var api = require('../controller/api.js');
-var retrieve = require('../controller/retrieve.js');
+var path = require('path');
+var multer = require('multer'),
+    Limits = { fileSize: 10 * 1024 * 1024, files:1 };
+var upload = multer({dest: path.join(__dirname+'/uploads'),
+                     limits: Limits
+                    });
+
 var path = process.cwd();
 
 module.exports = function(app) {
@@ -8,12 +13,9 @@ module.exports = function(app) {
         res.sendFile(path + '/app/views/index.html');
     });
     
-    app.get('/new/*', function(req, res) {
-        api(req, req.params[0], res);
-    });
-    
-    app.get('/*', function(req, res) {
-        retrieve(req.params[0], res, req);
+    app.post('/form', upload.single('item'), function(req, res) {
+        var returnMe = {size:req.file.size};
+        res.send(JSON.stringify(returnMe));
     });
     
 };

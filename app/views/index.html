@@ -1,6 +1,6 @@
 <header>
     <title>
-        URL Shortener Microservice
+        File Metadata Microservice
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </header>
@@ -9,28 +9,17 @@
     <main>
         <section class="container">
             <h1>
-                URL Shortener Microservice - FCC Basejump
+                File Metadata Microservice - FCC Basejump
             </h1>
             <p>
-                Pass a URL as a parameter to receive a JSON string containing a shortened URL that will redirect to the original site, example usage below:
+                Upload a file to receive the file size in bytes.
             </p>
-            <p class="well well-lg">
-                <span style="color:red">To create a new short URL, input the URL after ~/new/</span><br>
-                <span style="color:green">Example: </span>http://url-shortener-fcc.herokuapp.com/new/http://example.com <br><br>
-                
-                <span style="color:red">To redirect to the shortened URL, use the short_url provided by the API</span><br>
-                <span style="color:green">Example: </span>http://url-shortener-fcc.herokuapp.com/TWjGK7AM <br><br>
-                
-                <span style="color:red">API responds with JSON string in the following format</span><br>
-                <span style="color:green">JSON: </span>{"original_url":"http://example.com","short_url":"http://url-shortener-fcc.herokuapp.com/TWjGK7AM"}
-            </p>
-            <ul>
-                <h2>App functions:</h2>
-                <li>Validates URI before querying and saving to the database.</li>
-                <li>Will not create duplicate short urls for the same URL.</li>
-                <li>Creates a new short URL for each original URL.</li>
-                <li>Redirects to original URL from the input short URL.</li>
-            </ul>
+            <div class="well well-lg">
+                <form enctype="multipart/form-data" action="/form" method="POST">
+		            <input type="file" name="item"/><br>
+		            <input type="submit" value="Upload" />
+	            </form>
+            <div>
         </section>
     </main>
 </body>
