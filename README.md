@@ -1,6 +1,6 @@
-File Metadata Microservice - FCC Basejump
-=========================================
+File Metadata Microservice
+==========================
 
-FCC challenge - http://www.freecodecamp.com/challenges/file-metadata-microservice
+https://file-metadata-microservice-fcc.herokuapp.com/
 
 Upload a file to receive the file size in bytes.
